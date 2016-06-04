@@ -2,12 +2,16 @@ module BookKeeping
   VERSION = 3 # Where the version number matches the one in the test.
 end
 
+# Class to compute Hamming Distance for two Strings.
 class Hamming
   def self.compute(string, compared)
-    raise ArgumentError, "Strings have to be of equal length" unless (string.length == compared.length)
+    unless string.length == compared.length
+      raise ArgumentError, 'Strings have to be of equal length'
+    end
+
     hamming = 0
     (0..string.length).each do |index|
-      hamming = hamming + 1 if string[index] != compared[index]
+      hamming += 1 unless string[index] == compared[index]
     end
     hamming
   end
