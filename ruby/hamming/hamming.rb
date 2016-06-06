@@ -9,10 +9,6 @@ class Hamming
       raise ArgumentError, 'Strings have to be of equal length'
     end
 
-    hamming = 0
-    (0..string.length).each do |index|
-      hamming += 1 unless string[index] == compared[index]
-    end
-    hamming
+    (0..string.length).count { |index| string[index] != compared[index] }
   end
 end
