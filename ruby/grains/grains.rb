@@ -3,20 +3,20 @@
 class Grains
   class << self
     def total
-      upto(64).inject(:+)
+      squares_to(64).inject(:+)
     end
 
     def square(at)
-      upto(at).last
+      squares_to(at).last
     end
 
     private
 
-    def upto(number)
+    def squares_to(number)
       return [1] if number == 1
 
       squares = [1, 2]
-      (2..(number - 1)).to_a.map do |i|
+      (2...number).map do |i|
         prev = squares[i - 1]
         squares[i] = prev * 2
       end
