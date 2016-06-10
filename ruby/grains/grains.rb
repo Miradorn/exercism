@@ -16,10 +16,7 @@ class Grains
       return [1] if number == 1
 
       squares = [1, 2]
-      (2...number).map do |i|
-        prev = squares[i - 1]
-        squares[i] = prev * 2
-      end
+      (2...number).each { |i| squares[i] = squares[i - 1] * 2 }
       squares
     end
   end
