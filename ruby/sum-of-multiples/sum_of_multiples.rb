@@ -5,9 +5,9 @@ class SumOfMultiples
   end
 
   def to(limit)
-    nums = (1...limit).select do |num|
+    nums = (0...limit).select do |num|
       @bases.any? { |base| num % base == 0 }
     end
-    nums.inject(:+) || 0
+    nums.inject(:+)
   end
 end
