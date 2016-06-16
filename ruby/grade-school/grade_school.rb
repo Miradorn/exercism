@@ -7,7 +7,7 @@ class School
   require 'set'
 
   def add(name, grade)
-    mapping[grade] = mapping[grade].add(name)
+    mapping[grade].add(name)
   end
 
   def grade(index)
