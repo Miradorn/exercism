@@ -1,14 +1,9 @@
 # Implements keep and discard methods to arrays.
 class Array
   def keep
-    result = []
-
-    each do |elem|
-      next unless yield elem
-      result << elem
+    each_with_object([]) do |elem, res|
+      res << elem if yield elem
     end
-
-    result
   end
 
   def discard(&block)
