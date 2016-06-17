@@ -1,17 +1,18 @@
 # Computes Prime Factors for a given number
 class PrimeFactors
+  require 'prime'
+
   class << self
     def for(number)
       factors = []
-      factor = 1
+      primes = Prime.each(number)
 
       while number > 1
-        factor += 1
-        next unless number % factor == 0
+        factor = primes.find { |prime| number % prime == 0 }
+        primes.rewind
 
         number /= factor
         factors << factor
-        factor = 1
       end
       factors
     end
