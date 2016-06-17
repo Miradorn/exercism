@@ -1,5 +1,7 @@
 # Cleans and normalizes Phone Numbers in american Format.
 class PhoneNumber
+  INVALID = '0000000000'.freeze
+
   attr_reader :number
 
   def initialize(number)
@@ -21,14 +23,10 @@ class PhoneNumber
 
   private
 
-  def invalid
-    '0' * 10
-  end
-
   def clean(number)
     cleaned = number.gsub(/\W/, '')
     if cleaned =~ /\D/
-      invalid
+      INVALID
     else
       cleaned
     end
@@ -36,7 +34,7 @@ class PhoneNumber
 
   def check_too_short(number)
     if number.length < 10
-      invalid
+      INVALID
     else
       number
     end
@@ -44,7 +42,7 @@ class PhoneNumber
 
   def check_too_long(number)
     if number.length > 10
-      invalid
+      INVALID
     else
       number
     end
