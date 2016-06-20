@@ -19,7 +19,7 @@ class SpaceAge
   end
 
   def on_earth
-    @seconds / SECONDS_PER_YEAR_EARTH
+    seconds / SECONDS_PER_YEAR_EARTH
   end
 
   MAPPING.each do |plannet, factor|
