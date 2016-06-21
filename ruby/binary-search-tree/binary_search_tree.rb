@@ -18,9 +18,9 @@ class Bst
   def each(&block)
     return to_enum unless block_given?
 
-    @left.each(&block) if @left
+    @left&.each(&block)
     yield(@data)
-    @right.each(&block) if @right
+    @right&.each(&block)
   end
 
   private
