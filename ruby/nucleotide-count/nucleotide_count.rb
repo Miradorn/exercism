@@ -1,5 +1,5 @@
 class Nucleotide
-  ALPHABET = %W(A C G T)
+  ALPHABET = %w(A C G T).freeze
 
   attr_reader :histogram
 
@@ -17,5 +17,4 @@ class Nucleotide
   def count(l)
     histogram[l]
   end
-
 end
