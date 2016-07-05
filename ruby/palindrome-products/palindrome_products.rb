@@ -34,7 +34,6 @@ class Palindromes
   private
 
   def palindrome?(string)
-    half = string.length / 2
-    string[half..-1].end_with?(string[0...half].reverse)
+    string == string.reverse
   end
 end
