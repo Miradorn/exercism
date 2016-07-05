@@ -13,57 +13,46 @@ class BracketsTest < Minitest::Test
   end
 
   def test_empty_string
-    skip
     assert Brackets.paired?('')
   end
 
   def test_unpaired_brackets
-    skip
     refute Brackets.paired?('[[')
   end
 
   def test_wrong_ordered_brackets
-    skip
     refute Brackets.paired?('}{')
   end
 
   def test_paired_with_whitespace
-    skip
     assert Brackets.paired?('{ }')
   end
 
   def test_simple_nested_brackets
-    skip
     assert Brackets.paired?('{[]}')
   end
 
   def test_several_paired_brackets
-    skip
     assert Brackets.paired?('{}[]')
   end
 
   def test_paired_and_nested_brackets
-    skip
     assert Brackets.paired?('([{}({}[])])')
   end
 
   def test_unpaired_and_nested_brackets
-    skip
     refute Brackets.paired?('([{])')
   end
 
   def test_paired_and_wrong_nested_brackets
-    skip
     refute Brackets.paired?('[({]})')
   end
 
   def test_math_expression
-    skip
     assert Brackets.paired?('(((185 + 223.85) * 15) - 543)/2')
   end
 
   def test_complex_latex_expression
-    skip
     str = '\left(\begin{array}{cc} \frac{1}{3} & x\\ '\
           '\mathrm{e}^{x} &... x^2 \end{array}\right)'
     assert Brackets.paired?(str)
@@ -86,7 +75,6 @@ class BracketsTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 2, BookKeeping::VERSION
   end
 end
