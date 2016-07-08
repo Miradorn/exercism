@@ -6,7 +6,7 @@ class Triangle
   end
 
   def kind
-    valid?
+    validate
 
     if equilateral?
       :equilateral
@@ -31,7 +31,7 @@ class Triangle
     @sides[1]
   end
 
-  def valid?
+  def validate
     raise TriangleError unless @sides.all?(&:positive?)
     raise TriangleError unless triangle_inequality?
   end
